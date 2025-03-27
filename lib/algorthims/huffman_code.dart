@@ -9,14 +9,13 @@ class Node {
 
 class MinHeap {
   final List<Node> _heap = [];
-  int _size = 0;
 
   int _getLeftChildIndex(int index) => 2 * index + 1;
   int _getRightChildIndex(int index) => 2 * index + 2;
   int _getParentIndex(int index) => (index - 1) ~/ 2;
 
-  bool _hasLeftChild(int index) => _getLeftChildIndex(index) < _size;
-  bool _hasRightChild(int index) => _getRightChildIndex(index) < _size;
+  bool _hasLeftChild(int index) => _getLeftChildIndex(index) < size;
+  bool _hasRightChild(int index) => _getRightChildIndex(index) < size;
   bool _hasParent(int index) => _getParentIndex(index) >= 0;
 
   int _leftChild(int index) => _heap[_getLeftChildIndex(index)].frequency;
@@ -30,25 +29,23 @@ class MinHeap {
   }
 
   Node extractMinNode() {
-    if (_size == 0) {
+    if (isEmpty) {
       throw Exception("Heap is empty");
     }
     Node item = _heap[0];
-    _heap[0] = _heap[_size - 1];
+    _heap[0] = _heap[size - 1];
     _heap.removeLast();
-    _size--;
     _heapifyDown();
     return item;
   }
 
   void add(Node item) {
     _heap.add(item);
-    _size++;
     _heapifyUp();
   }
 
   void _heapifyUp() {
-    int index = _size - 1;
+    int index = size - 1;
     while (_hasParent(index) && _parent(index) > _heap[index].frequency) {
       _swap(_getParentIndex(index), index);
       index = _getParentIndex(index);
