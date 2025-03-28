@@ -75,13 +75,13 @@ class MinHeap {
 
 class HuffmanCoding {
   Map<String, String> huffmanCodes = {};
+  MinHeap minHeap = MinHeap();
 
   void buildHuffmanTree(Map<String, int> items) {
     List<Node> nodes = [];
     items.forEach((character, frequency) {
       nodes.add(Node(character, frequency));
     });
-    MinHeap minHeap = MinHeap();
     for (int i = 0; i < nodes.length; i++) {
       minHeap.add(nodes[i]);
     }
@@ -110,7 +110,7 @@ class HuffmanCoding {
     generateHuffmanCodes(node.right, "${code}1");
   }
 
-  String decodeHuffmanCodes(String code) {
+  String decodeHuffmanCodesUsingMap(String code) {
     Map<String, String> swappedMap = {};
     int codeMaxLength = 0;
     huffmanCodes.forEach((character, code) {
@@ -141,6 +141,24 @@ class HuffmanCoding {
       decodedMsg += decodedLetter;
       if (!isDecoded) {
         throw Exception("Wrong code");
+      }
+    }
+    return decodedMsg;
+  }
+
+  String decodeHuffmanCodesUsingHuffmanTree(String code) {
+    String decodedMsg = "";
+    Node curr = minHeap._heap.first;
+    int length = code.length;
+    for (int i = 0; i < length; i++) {
+      if (code[i] == "0") {
+        curr = curr.left!;
+      } else {
+        curr = curr.right!;
+      }
+      if (curr.left == null && curr.right == null) {
+        decodedMsg += curr.char;
+        curr = minHeap._heap.first;
       }
     }
     return decodedMsg;
