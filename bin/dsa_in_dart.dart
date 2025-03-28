@@ -9,7 +9,7 @@ void main() {
   huffmanCoding.huffmanCodes.forEach((character, code) {
     print('$character: $code');
   });
-  String code = "000110111";
+  String code = "101100110";
   try {
     print("Decoded Msg is : ${huffmanCoding.decodeHuffmanCodes(code)}");
   } catch (e) {

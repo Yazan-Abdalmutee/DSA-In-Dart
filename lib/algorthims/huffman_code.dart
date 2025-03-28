@@ -106,8 +106,8 @@ class HuffmanCoding {
     if (node.left == null && node.right == null) {
       huffmanCodes[node.char] = code;
     }
-    generateHuffmanCodes(node.left, '0$code');
-    generateHuffmanCodes(node.right, '1$code');
+    generateHuffmanCodes(node.left, "${code}0");
+    generateHuffmanCodes(node.right, "${code}1");
   }
 
   String decodeHuffmanCodes(String code) {
