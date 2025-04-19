@@ -1,6 +1,20 @@
 import 'package:dsa_in_dart/algorthims/huffman_code.dart';
 
 void main() {
+
+
+
+
+
+
+
+
+
+
+
+
+  //Huffman  Main Code
+  /*  
   Map<String, int> frequencies = {'A': 40, 'B': 35, 'C': 20, 'D': 5};
 
   HuffmanCoding huffmanCoding = HuffmanCoding();
@@ -16,4 +30,5 @@ void main() {
   } catch (e) {
     print(e);
   }
+  */
 }
