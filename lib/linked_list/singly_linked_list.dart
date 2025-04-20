@@ -5,7 +5,7 @@ class Node<T> {
   Node(this.data, {this.next});
 }
 
-class LinkedList<T> {
+class SinglyLinkedList<T> {
   Node<T>? head;
   Node<T>? tail;
   int _length = 0;
@@ -170,8 +170,8 @@ class LinkedList<T> {
     }
   }
 
-  LinkedList<T> operator +(LinkedList<T> other) {
-    LinkedList<T> newLinkedList = LinkedList<T>();
+  SinglyLinkedList<T> operator +(SinglyLinkedList<T> other) {
+    SinglyLinkedList<T> newLinkedList = SinglyLinkedList<T>();
     Node<T>? current = head;
 
     while (current != null) {
@@ -189,8 +189,8 @@ class LinkedList<T> {
     return newLinkedList;
   }
 
-  LinkedList<T> operator -(T value) {
-    LinkedList<T> newLinkedList = LinkedList<T>();
+  SinglyLinkedList<T> operator -(T value) {
+    SinglyLinkedList<T> newLinkedList = SinglyLinkedList<T>();
     Node<T>? current = head;
     bool isRemoved = false;
 
@@ -215,8 +215,8 @@ class LinkedList<T> {
     }
   }
 
-  LinkedList<S> map<S>(S Function(T) transform) {
-    LinkedList<S> newLinkedList = LinkedList<S>();
+  SinglyLinkedList<S> map<S>(S Function(T) transform) {
+    SinglyLinkedList<S> newLinkedList = SinglyLinkedList<S>();
     Node<T>? current = head;
 
     while (current != null) {
@@ -228,8 +228,8 @@ class LinkedList<T> {
     return newLinkedList;
   }
 
-  LinkedList<T> where(bool Function(T) test) {
-    LinkedList<T> newLinkedList = LinkedList<T>();
+  SinglyLinkedList<T> where(bool Function(T) test) {
+    SinglyLinkedList<T> newLinkedList = SinglyLinkedList<T>();
     Node<T>? current = head;
 
     while (current != null) {

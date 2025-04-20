@@ -24,7 +24,9 @@ class Stack<T> {
   }
 
   void clear() {
-    _stack.clear();
+    while (_stack.isNotEmpty) {
+      pop();
+    }
   }
 
   bool isEmpty() {

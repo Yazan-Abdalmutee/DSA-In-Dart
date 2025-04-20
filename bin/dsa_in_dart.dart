@@ -1,9 +1,33 @@
 import 'package:dsa_in_dart/algorthims/huffman_code.dart';
-import 'package:dsa_in_dart/stack.dart';
+import 'package:dsa_in_dart/queue/queue_using_linked_list.dart';
+import 'package:dsa_in_dart/queue/queue_using_list.dart';
+import 'package:dsa_in_dart/stack/stack.dart';
 
 void main() {
 
+  //Queue using list and linkdList Main Code
 
+  /*
+  //QueueUsingList<String> queue = QueueUsingList<String>();   // un comment to use this
+  QueueUsingLinkedList<String> queue = QueueUsingLinkedList<String>();
+  queue.enqueue("Yazan");
+  print('--Enqueue--');
+  queue.enqueue("Shrouf");
+  print('--Enqueue--');
+  queue.enqueue("Ahmad");
+  print('--Enqueue--');
+  print('First Element is: ${queue.front()}');
+  print('size is: ${queue.size()}');
+  print('--Dequeue--');
+  queue.dequeue();
+  print('First Element is: ${queue.front()}');
+  print('size is: ${queue.size()}');
+  queue.clear();
+  print('--Clear--');
+  print('size is: ${queue.size()}');
+  print('is Stack Empty?: ${queue.isEmpty()}');
+  print('First Element is: ${queue.front()}');
+  */
 
   //Stack Main Code
   /*
@@ -31,6 +55,7 @@ void main() {
   //Huffman Main Code
   /*  
   Map<String, int> frequencies = {'A': 40, 'B': 35, 'C': 20, 'D': 5};
+
   HuffmanCoding huffmanCoding = HuffmanCoding();
   huffmanCoding.buildHuffmanTree(frequencies);
   print('Huffman Codes:');

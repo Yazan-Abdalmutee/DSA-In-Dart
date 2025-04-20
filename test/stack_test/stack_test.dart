@@ -1,4 +1,4 @@
-import 'package:dsa_in_dart/stack.dart';
+import 'package:dsa_in_dart/stack/stack.dart';
 import 'package:test/test.dart';
 
 void main() {

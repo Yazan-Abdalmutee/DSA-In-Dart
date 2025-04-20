@@ -1,12 +1,12 @@
-import 'package:dsa_in_dart/lists/llist.dart';
+import 'package:dsa_in_dart/linked_list/singly_linked_list.dart';
 import 'package:test/test.dart';
 
 void main() {
   group('LinkedList Basic Operations', () {
-    late LinkedList<int> list;
+    late SinglyLinkedList<int> list;
 
     setUp(() {
-      list = LinkedList<int>();
+      list = SinglyLinkedList<int>();
     });
 
     test('initial length should be zero', () {
@@ -64,7 +64,7 @@ void main() {
     });
 
     test('operator + should concatenate two lists', () {
-      final list2 = LinkedList<int>();
+      final list2 = SinglyLinkedList<int>();
       list.add(1);
       list.add(2);
       list2.add(3);
@@ -85,10 +85,10 @@ void main() {
   });
 
   group('LinkedList Anonymous Function Methods', () {
-    late LinkedList<int> list;
+    late SinglyLinkedList<int> list;
 
     setUp(() {
-      list = LinkedList<int>();
+      list = SinglyLinkedList<int>();
       list.add(1);
       list.add(2);
       list.add(3);
