@@ -1,15 +1,14 @@
 import 'package:dsa_in_dart/algorthims/huffman_code.dart';
-import 'package:dsa_in_dart/queue/queue_using_linked_list.dart';
-import 'package:dsa_in_dart/queue/queue_using_list.dart';
+import 'package:dsa_in_dart/queue/linked_queue.dart';
+import 'package:dsa_in_dart/queue/list_queue.dart';
 import 'package:dsa_in_dart/stack/stack.dart';
 
 void main() {
 
   //Queue using list and linkdList Main Code
-
   /*
-  //QueueUsingList<String> queue = QueueUsingList<String>();   // un comment to use this
-  QueueUsingLinkedList<String> queue = QueueUsingLinkedList<String>();
+  //ListQueue<String> queue = ListQueue<String>();   // un comment to use this
+  LinkedQueue<String> queue = LinkedQueue<String>();
   queue.enqueue("Yazan");
   print('--Enqueue--');
   queue.enqueue("Shrouf");

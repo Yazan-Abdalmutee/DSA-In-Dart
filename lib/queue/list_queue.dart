@@ -1,4 +1,4 @@
-class QueueUsingList<T> {
+class ListQueue<T> {
   final List<T> _queue = [];
   int _front = 0;
   int _rear = -1;

@@ -4,7 +4,7 @@ class Node<T> {
   Node(this.data);
 }
 
-class QueueUsingLinkedList<T> {
+class LinkedQueue<T> {
   Node<T>? _front;
   Node<T>? _rear;
   int _size = 0;

@@ -1,12 +1,12 @@
-import 'package:dsa_in_dart/queue/queue_using_linked_list.dart';
+import 'package:dsa_in_dart/queue/list_queue.dart';
 import 'package:test/test.dart';
 
 void main() {
   group('queue Basic Operations', () {
-    late QueueUsingLinkedList<int> queue;
+    late ListQueue<int> queue;
 
     setUp(() {
-      queue = QueueUsingLinkedList<int>();
+      queue = ListQueue<int>();
     });
 
     test('initial size should be zero', () {
