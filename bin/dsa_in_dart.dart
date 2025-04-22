@@ -2,6 +2,7 @@ import 'dart:collection';
 
 import 'package:dsa_in_dart/algorthims/huffman_code.dart';
 import 'package:dsa_in_dart/linked_list/doubly_linked_list.dart';
+import 'package:dsa_in_dart/map/map.dart';
 import 'package:dsa_in_dart/queue/linked_queue.dart';
 import 'package:dsa_in_dart/queue/list_queue.dart';
 import 'package:dsa_in_dart/stack/stack.dart';
