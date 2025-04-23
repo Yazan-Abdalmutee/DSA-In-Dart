@@ -31,7 +31,10 @@ void main() {
     test('insertAt should insert at the correct index', () {
       doublyLinkedList.insertAtHead(1);
       doublyLinkedList.insertAtHead(2);
-      doublyLinkedList.insertAt(1, 3);
+      bool isValidFirstInsert = doublyLinkedList.insertAt(1, 3);
+      bool isValidSecondInsert = doublyLinkedList.insertAt(7, 3);
+      expect(isValidFirstInsert, equals(true));
+      expect(isValidSecondInsert, equals(false));
       expect(doublyLinkedList[1], equals(3));
       expect(doublyLinkedList.length(), equals(3));
     });
@@ -49,20 +52,16 @@ void main() {
       expect(doublyLinkedList.length(), equals(2));
     });
 
-    test(
-      'getAt method should return the index of  first occurnces of that element in the doubly linked list',
-      () {
-        doublyLinkedList.insertAtTail(1);
-        doublyLinkedList.insertAtTail(2);
-        doublyLinkedList.insertAtTail(3);
-        doublyLinkedList.insertAtTail(4);
-        doublyLinkedList.insertAtTail(5);
+    test('getAt method should return the value at that index', () {
+      doublyLinkedList.insertAtTail(1);
+      doublyLinkedList.insertAtTail(2);
+      doublyLinkedList.insertAtTail(3);
+      doublyLinkedList.insertAtTail(4);
+      doublyLinkedList.insertAtTail(5);
 
-        expect(doublyLinkedList.getAt(12), null);
-        expect(doublyLinkedList.getAt(3), equals(4));
-        expect(doublyLinkedList.length(), equals(5));
-      },
-    );
+      expect(doublyLinkedList.getAt(12), null);
+      expect(doublyLinkedList.getAt(3), equals(4));
+    });
 
     test(
       'contains method should return true if that elemnt exist in the doubly llinked list',

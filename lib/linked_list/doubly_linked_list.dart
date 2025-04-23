@@ -38,21 +38,21 @@ class DoublyLinkedList<T> {
     }
   }
 
-  void insertAt(int index, T value) {
+  bool insertAt(int index, T value) {
     if (index < 0 || index > _length) {
       print('Index Out Of Range');
-      return;
+      return false;
     }
 
     DoublyNode<T> newDoublyNode = DoublyNode<T>(value);
 
     if (index == 0) {
       insertAtHead(value);
-      return;
+      return true;
     }
     if (index == _length) {
       insertAtTail(value);
-      return;
+      return true;
     }
 
     DoublyNode<T>? current = head;
@@ -77,6 +77,7 @@ class DoublyLinkedList<T> {
 
       _length++;
     }
+    return true;
   }
 
   bool delete(T data) {
@@ -87,6 +88,8 @@ class DoublyLinkedList<T> {
       head = head!.next;
       if (head != null) {
         head!.prev = null;
+      } else {
+        tail = null;
       }
     }
     DoublyNode<T>? current = head;
@@ -99,7 +102,7 @@ class DoublyLinkedList<T> {
           current.next!.prev = current.prev;
         }
         if (current.next == null) {
-          tail = current;
+          tail = current.prev;
         }
       }
       current = current.next;
@@ -150,7 +153,7 @@ class DoublyLinkedList<T> {
     }
   }
 
- T? operator [](int index) {
+  T? operator [](int index) {
     if (index >= _length || index < 0) {
       print('Index Out Of Range');
       return null;
@@ -169,5 +172,6 @@ class DoublyLinkedList<T> {
 
     return null;
   }
+
   int length() => _length;
 }
