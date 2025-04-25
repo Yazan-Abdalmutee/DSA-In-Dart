@@ -1,6 +1,8 @@
 import 'package:dsa_in_dart/algorthims/huffman_code.dart';
 import 'package:dsa_in_dart/linked_list/circular_linked_list.dart';
 import 'package:dsa_in_dart/linked_list/doubly_linked_list.dart';
+import 'package:dsa_in_dart/problem_solving/Strings/anagrams.dart';
+import 'package:dsa_in_dart/problem_solving/Strings/substring_search.dart';
 import 'package:dsa_in_dart/queue/linked_queue.dart';
 import 'package:dsa_in_dart/queue/list_queue.dart';
 import 'package:dsa_in_dart/stack/stack.dart';
@@ -11,6 +13,35 @@ void main() {
   //runHuffmanExample();
   //runDoublyLinkedListExample();
   //runCircularLinkedListExample();
+  runAnagramsExample();
+}
+
+void runAnagramsExample() {
+  Anagrams anagrams = Anagrams(
+    firstString: 'racecar',
+    secoundString: 'carrace',
+  );
+  print('is Anagrams (manual): ${anagrams.isAnagramsManual()}');
+  print('is Anagrams (Built-in): ${anagrams.isAnagramsBuiltIn()}');
+}
+
+void runSubStringSearchExample() {
+  SubstringSearch substringSearch = SubstringSearch(
+    text: 'banana',
+    pattern: 'ana',
+  );
+  print('Contains (manual): ${substringSearch.containsSubstringManual()}');
+  print(
+    'First occurrence (manual): ${substringSearch.firstOccurrenceManual()}',
+  );
+  print('All occurrences (manual): ${substringSearch.allOccurrencesManual()}');
+  print('Contains (built-in):${substringSearch.containsSubstringBuiltIn()}');
+  print(
+    'First occurrence (built-in): ${substringSearch.firstOccurrenceBuiltIn()}',
+  );
+  print(
+    'All occurrences (built-in): ${substringSearch.allOccurrencesBuiltIn()}',
+  );
 }
 
 void runCircularLinkedListExample() {
