@@ -2,6 +2,7 @@ import 'package:dsa_in_dart/algorthims/huffman_code.dart';
 import 'package:dsa_in_dart/linked_list/circular_linked_list.dart';
 import 'package:dsa_in_dart/linked_list/doubly_linked_list.dart';
 import 'package:dsa_in_dart/problem_solving/Strings/anagrams.dart';
+import 'package:dsa_in_dart/problem_solving/circular_buffer.dart';
 import 'package:dsa_in_dart/problem_solving/Strings/substring_search.dart';
 import 'package:dsa_in_dart/queue/linked_queue.dart';
 import 'package:dsa_in_dart/queue/list_queue.dart';
@@ -14,7 +15,38 @@ void main() {
   //runDoublyLinkedListExample();
   //runCircularLinkedListExample();
   //runSubStringSearchExample();
-  runAnagramsExample();
+  //runAnagramsExample();
+  //countWordOccurrences("Hi How are You Hi You are ok");
+  //runRingBufferExample();
+}
+
+void countWordOccurrences(String s) {
+  Map<String, int> result = {};
+
+  List<String> words = s.split(' ');
+  for (int i = 0; i < words.length; i++) {
+    result.update(words[i], (value) => value + 1, ifAbsent: () => 1);
+  }
+  result.forEach((key, value) {
+    print('$key:$value');
+  });
+}
+
+void runRingBufferExample() {
+  CircularBuffer<int> circularBuffer = CircularBuffer<int>(capacity: 12);
+  circularBuffer.add(1);
+  circularBuffer.add(2);
+  circularBuffer.add(3);
+  circularBuffer.add(4);
+  circularBuffer.add(5);
+  circularBuffer.add(6);
+  circularBuffer.add(7);
+  circularBuffer.add(8);
+  circularBuffer.add(9);
+  print(circularBuffer.peek());
+    print(circularBuffer.isFull());
+
+  print(circularBuffer.toList().toString());
 }
 
 void runAnagramsExample() {
