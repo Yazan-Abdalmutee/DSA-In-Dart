@@ -2,7 +2,7 @@ import 'package:dsa_in_dart/algorthims/huffman_code.dart';
 import 'package:dsa_in_dart/linked_list/circular_linked_list.dart';
 import 'package:dsa_in_dart/linked_list/doubly_linked_list.dart';
 import 'package:dsa_in_dart/problem_solving/Strings/anagrams.dart';
-import 'package:dsa_in_dart/problem_solving/circular_buffer.dart';
+import 'package:dsa_in_dart/problem_solving/ring_buffer.dart';
 import 'package:dsa_in_dart/problem_solving/Strings/substring_search.dart';
 import 'package:dsa_in_dart/queue/linked_queue.dart';
 import 'package:dsa_in_dart/queue/list_queue.dart';
@@ -33,7 +33,7 @@ void countWordOccurrences(String s) {
 }
 
 void runRingBufferExample() {
-  CircularBuffer<int> circularBuffer = CircularBuffer<int>(capacity: 12);
+  CircularBuffer<int> circularBuffer = CircularBuffer<int>(capacity: 3);
   circularBuffer.add(1);
   circularBuffer.add(2);
   circularBuffer.add(3);
@@ -43,10 +43,9 @@ void runRingBufferExample() {
   circularBuffer.add(7);
   circularBuffer.add(8);
   circularBuffer.add(9);
-  print(circularBuffer.peek());
-    print(circularBuffer.isFull());
-
-  print(circularBuffer.toList().toString());
+  print('Peak is: ${circularBuffer.peek()}');
+  print('Is Full?: ${circularBuffer.isFull()}');
+  print('${circularBuffer.toList()}');
 }
 
 void runAnagramsExample() {

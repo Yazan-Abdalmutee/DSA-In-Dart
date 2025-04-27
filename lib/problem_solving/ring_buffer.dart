@@ -1,26 +1,26 @@
-
-/*
-
-Still need to update ..........................
-
-*/
-
 class CircularBuffer<T> {
   CircularBuffer({required this.capacity}) {
+    if (capacity <= 0) {
+      throw ArgumentError("Capacity Should be >0");
+    }
     buffer = List<T?>.filled(capacity, null);
   }
   late List<T?> buffer;
   int capacity;
   int _read = 0;
   int _write = 0;
+  int _size = 0;
 
   int totalCapacity() {
     return capacity;
   }
 
+  int get size => _size;
+
   void add(T value) {
+    if (_size < capacity) _size++;
     buffer[_write] = value;
-    if (_write == _read) {
+    if (_write == _read && buffer[_read] != null) {
       _read++;
       if (_read >= capacity) _read = 0;
     }
@@ -33,6 +33,7 @@ class CircularBuffer<T> {
 
   T? get() {
     if (buffer[_read] != null) {
+      _size--;
       T? returnValue = buffer[_read];
       buffer[_read] = null;
       _read++;
@@ -44,47 +45,42 @@ class CircularBuffer<T> {
 
   List<T> toList() {
     List<T> values = [];
-    T? returnedValue = buffer[_read];
     int tempRead = _read;
+    int count = _size;
 
-    while (true) {
-      if (returnedValue != null) {
-        values.add(returnedValue);
-        tempRead++;
-        if (tempRead >= capacity) tempRead = 0;
-        returnedValue = buffer[tempRead];
-        if (tempRead == _read) break;
-      } else {
-        tempRead++;
-        if (tempRead >= capacity) tempRead = 0;
-
-        returnedValue = buffer[tempRead];
-        if (tempRead == _read) break;
+    while (count > 0) {
+      if (buffer[tempRead] != null) {
+        values.add(buffer[tempRead]!);
       }
+      tempRead = (tempRead + 1) % capacity;
+      count--;
     }
     return values;
   }
 
   bool isEmpty() {
-    if (buffer[_read] == null) return true;
+    if (_size == 0) return true;
     return false;
   }
 
   bool isFull() {
-    if (buffer[_write] != null) {
+    if (_size == capacity) {
       return true;
     }
     return false;
   }
 
   void clearBuffer() {
+    _size = 0;
+    _read = 0;
+    _write = 0;
     buffer = List.filled(capacity, null);
   }
 
   T? peek() {
-    if (!isEmpty()){
-    return buffer[_read];
-
+    if (!isEmpty()) {
+      return buffer[_read];
     }
+    return null;
   }
 }
