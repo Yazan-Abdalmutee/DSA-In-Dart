@@ -53,15 +53,13 @@ void main() {
       expect(buffer.isFull(), equals(false));
     });
 
-
-
     test('Clear buffer', () {
       buffer.add(5);
       buffer.add(6);
       buffer.clearBuffer();
       expect(buffer.isEmpty(), equals(true));
       expect(buffer.size, equals(0));
-      expect(buffer.peek(),equals( null));
+      expect(buffer.peek(), equals(null));
     });
 
     test('toList return elemnets from oldest to newest', () {

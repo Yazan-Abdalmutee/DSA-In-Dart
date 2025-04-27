@@ -27,8 +27,8 @@ void main() {
       cicularLinkedList.insertAtEnd(1);
       cicularLinkedList.insertAtEnd(4);
       cicularLinkedList.insertAtEnd(1);
-      expect(cicularLinkedList.delete(1), true);
-      expect(cicularLinkedList.contains(1), false);
+      expect(cicularLinkedList.delete(1), equals(true));
+      expect(cicularLinkedList.contains(1),equals (false));
       expect(cicularLinkedList.delete(5), equals(false));
       expect(cicularLinkedList.length(), equals(3));
     });
@@ -38,7 +38,7 @@ void main() {
       cicularLinkedList.insertAtEnd(2);
       cicularLinkedList.insertAtEnd(3);
       cicularLinkedList.insertAtEnd(4);
-      expect(cicularLinkedList.getAt(12), null);
+      expect(cicularLinkedList.getAt(12), equals(null));
       expect(cicularLinkedList.getAt(2), equals(3));
     });
 
@@ -49,8 +49,8 @@ void main() {
         cicularLinkedList.insertAtEnd(2);
         cicularLinkedList.insertAtEnd(3);
         cicularLinkedList.insertAtEnd(4);
-        expect(cicularLinkedList.contains(3), true);
-        expect(cicularLinkedList.contains(7), false);
+        expect(cicularLinkedList.contains(3), equals(true));
+        expect(cicularLinkedList.contains(7), equals(false));
       },
     );
   });

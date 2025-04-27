@@ -46,8 +46,8 @@ void main() {
       doublyLinkedList.insertAt(1, 2);
       doublyLinkedList.insertAtHead(2);
 
-      expect(doublyLinkedList.delete(2), true);
-      expect(doublyLinkedList.contains(2), false);
+      expect(doublyLinkedList.delete(2), equals(true));
+      expect(doublyLinkedList.contains(2), equals(false));
       expect(doublyLinkedList.delete(5), equals(false));
       expect(doublyLinkedList.length(), equals(2));
     });
@@ -69,8 +69,8 @@ void main() {
         doublyLinkedList.insertAtHead(1);
         doublyLinkedList.insertAtHead(2);
         doublyLinkedList.insertAtTail(3);
-        expect(doublyLinkedList.contains(3), true);
-        expect(doublyLinkedList.contains(4), false);
+        expect(doublyLinkedList.contains(3), equals(true));
+        expect(doublyLinkedList.contains(4), equals(false));
       },
     );
   });
