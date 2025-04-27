@@ -18,7 +18,7 @@ void main() {
       queue.enqueue(20);
       expect(queue.size(), equals(2));
       expect(queue.front(), equals(10));
-      expect(queue.isEmpty(), false);
+      expect(queue.isEmpty(), equals(false));
     });
 
     test('front should return first element', () {
@@ -57,7 +57,7 @@ void main() {
       queue.enqueue(3);
       queue.clear();
       expect(queue.size(), equals(0));
-      expect(queue.isEmpty(), true);
+      expect(queue.isEmpty(), equals(true));
     });
 
     test('isEmpty should retrun True if queue is empty', () {

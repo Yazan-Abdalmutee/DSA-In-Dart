@@ -18,7 +18,7 @@ void main() {
       stack.push(20);
       expect(stack.size(), equals(2));
       expect(stack.peek(), equals(20));
-      expect(stack.isEmpty(), false);
+      expect(stack.isEmpty(), equals(false));
     });
 
     test('peek should return last element', () {
@@ -28,7 +28,7 @@ void main() {
       expect(lastElement, equals(20));
     });
 
-      test('peek element of empty stack should be null', () {
+    test('peek element of empty stack should be null', () {
       stack.push(1);
       stack.pop();
       final lastElement = stack.peek();
@@ -57,7 +57,7 @@ void main() {
       stack.push(3);
       stack.clear();
       expect(stack.size(), equals(0));
-      expect(stack.isEmpty(), true);
+      expect(stack.isEmpty(), equals(true));
     });
 
     test('isEmpty should retrun True if stack is empty', () {
