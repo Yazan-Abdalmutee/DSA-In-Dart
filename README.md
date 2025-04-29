@@ -68,7 +68,7 @@ This section contains various map-based utility functions:
 ### 2. Ring Buffer
 
 - **Ring Buffer (Circular Buffer)**  
-  Efficient fixed-size buffer using a circular structure. Supports add, get, and buffer full/empty detection.
+  Efficient fixed-size buffer using a List. Supports add, get, and buffer full/empty detection.
 ---
 ## 🧪 Tests
 
