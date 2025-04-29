@@ -17,7 +17,7 @@ void main() {
   //runSubStringSearchExample();
   //runAnagramsExample();
   //countWordOccurrences("Hi How are You Hi You are ok");
-  //runRingBufferExample();
+  runRingBufferExample() ;
 }
 
 void countWordOccurrences(String s) {
