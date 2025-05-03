@@ -1,5 +1,3 @@
-import 'dart:mirrors';
-
 import 'package:dsa_in_dart/algorthims/huffman_code.dart';
 import 'package:dsa_in_dart/linked_list/circular_linked_list.dart';
 import 'package:dsa_in_dart/linked_list/doubly_linked_list.dart';
@@ -26,7 +24,7 @@ void main() {
   //lookAndSay(9);
   //lookAndSayIteration(9);
   //runLookAndSayExample();
-  //runIsomophicExample();
+  runIsomophicExample();
 }
 
 void runIsomophicExample() {
