@@ -13,9 +13,14 @@ void main() {
       expect(isomophic.isIsomophic("aaa", "bb"), equals(false));
     });
 
-    test('Should return false for different length ', () {
+    test('Should return true for right Iso  ', () {
       Isomophic isomophic = Isomophic();
       expect(isomophic.isIsomophic("abbac", "vccvk"), equals(true));
+    });
+
+    test('Should return false for wrong Iso  ', () {
+      Isomophic isomophic = Isomophic();
+      expect(isomophic.isIsomophic("abbac", "vccnk"), equals(false));
     });
   });
 }

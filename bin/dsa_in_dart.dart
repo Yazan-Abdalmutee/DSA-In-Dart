@@ -5,6 +5,7 @@ import 'package:dsa_in_dart/linked_list/circular_linked_list.dart';
 import 'package:dsa_in_dart/linked_list/doubly_linked_list.dart';
 import 'package:dsa_in_dart/problem_solving/Strings/anagrams.dart';
 import 'package:dsa_in_dart/problem_solving/isomophic.dart';
+import 'package:dsa_in_dart/problem_solving/look_and_say.dart';
 import 'package:dsa_in_dart/problem_solving/ring_buffer.dart';
 import 'package:dsa_in_dart/problem_solving/Strings/substring_search.dart';
 import 'package:dsa_in_dart/queue/linked_queue.dart';
@@ -24,102 +25,20 @@ void main() {
   //runRingBufferExample();
   //lookAndSay(9);
   //lookAndSayIteration(9);
-  //print(lookAndSayRecursion(9, "", "1"));
+  //runLookAndSayExample();
+  //runIsomophicExample();
+}
 
+void runIsomophicExample() {
   Isomophic isomophic = Isomophic();
   print(isomophic.isIsomophic("alm", "goj"));
 }
 
-String lookAndSayRecursion(int number, String prev, String currentValues) {
-  if (number == 1) {
-    return currentValues;
-  }
-  int counter = 1;
-  int? current = int.parse(currentValues[0]);
-  prev = "";
-  for (int j = 1; j < currentValues.length; j++) {
-    if (int.parse(currentValues[j]) == current) {
-      counter++;
-    } else {
-      prev += counter.toString();
-      prev += current.toString();
-      counter = 1;
-      current = int.parse(currentValues[j]);
-    }
-  }
-  prev += counter.toString();
-  prev += current.toString();
-
-  currentValues = "";
-
-  for (int j = 0; j < prev.length; j++) {
-    currentValues += ((prev[(j)]));
-  }
-  return lookAndSayRecursion(number - 1, prev, currentValues);
-}
-
-void lookAndSay(int number) {
-  String prev = "";
-  Stack<int> stack = Stack<int>();
-  stack.push(1);
-  for (int i = 2; i <= number; i++) {
-    int counter = 1;
-    int? current = stack.pop();
-    prev = "";
-    while (!stack.isEmpty()) {
-      if (!stack.isEmpty() && stack.peek() == current) {
-        counter++;
-        stack.pop();
-      } else {
-        prev += counter.toString();
-        prev += current.toString();
-        counter = 1;
-        if (!stack.isEmpty()) current = stack.pop()!;
-      }
-    }
-    if (stack.isEmpty()) {
-      prev += counter.toString();
-      prev += current.toString();
-    }
-
-    for (int j = 0; j < prev.length; j++) {
-      stack.push(int.parse(prev[(prev.length - j - 1)]));
-    }
-  }
-  String result = "";
-  while (!stack.isEmpty()) {
-    result += stack.pop().toString();
-  }
-  print(result);
-}
-
-void lookAndSayIteration(int number) {
-  String prev = "";
-  String currentValues = "1";
-  for (int i = 2; i <= number; i++) {
-    int counter = 1;
-    int? current = int.parse(currentValues[0]);
-    prev = "";
-    for (int j = 1; j < currentValues.length; j++) {
-      if (int.parse(currentValues[j]) == current) {
-        counter++;
-      } else {
-        prev += counter.toString();
-        prev += current.toString();
-        counter = 1;
-        current = int.parse(currentValues[j]);
-      }
-    }
-    prev += counter.toString();
-    prev += current.toString();
-
-    currentValues = "";
-
-    for (int j = 0; j < prev.length; j++) {
-      currentValues += ((prev[(j)]));
-    }
-  }
-  print(currentValues);
+void runLookAndSayExample() {
+  LookAndSay lookAndSay = LookAndSay();
+  print(lookAndSay.lookAndSayUsingRecursion(9, "", "1"));
+  print(lookAndSay.lookAndSayUsingStack(9));
+  print(lookAndSay.lookAndSayUsingIteration(9));
 }
 
 void countWordOccursrences(String s) {
