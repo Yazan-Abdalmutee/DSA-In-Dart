@@ -50,7 +50,7 @@ class CircularBuffer<T> {
 
     while (count > 0) {
       if (buffer[tempRead] != null) {
-        values.add(buffer[tempRead]!);
+        values.add(buffer[tempRead] as T);
       }
       tempRead = (tempRead + 1) % capacity;
       count--;
