@@ -27,7 +27,7 @@ void main() {
   //print(lookAndSayRecursion(9, "", "1"));
 
   Isomophic isomophic = Isomophic();
-  print(isomophic.isIsomophic("aabah", "nncnv"));
+  print(isomophic.isIsomophic("alm", "goj"));
 }
 
 String lookAndSayRecursion(int number, String prev, String currentValues) {
