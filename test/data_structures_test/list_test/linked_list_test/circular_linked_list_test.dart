@@ -1,4 +1,4 @@
-import 'package:dsa_in_dart/linked_list/circular_linked_list.dart';
+import 'package:dsa_in_dart/data_structures/list/linked_list/circular_linked_list.dart';
 import 'package:test/test.dart';
 
 void main() {
